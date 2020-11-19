@@ -1,0 +1,36 @@
+#jdbc:
+#  driverClassName: com.mysql.cj.jdbc.Driver
+#  url: jdbc:mysql://localhost:3306/spring_boot?characterEncoding=utf-8&serverTimezone=UTC
+#  username: root
+#  password: Wdc82563815
+
+# 修改tomcat的端口，80是浏览器默认端口，改成80就不用写端口号了
+server:
+  port: 80
+
+# 日志记录级别
+logging:
+  level:
+    com.zjut: debug
+    org.springframework: info
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_boot?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: Wdc82563815
+  redis:
+    host: localhost
+    port: 6379
+
+# mybatis的配置
+mybatis:
+  # 实体类别名包的路径
+  type-aliases-package: com.zjut.pojo
+  # 映射文件路径,几乎不用
+  # mapper-locations: classpath:mappers/*.xml
+  configuration:
+    # 控制台输出执行sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
